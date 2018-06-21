@@ -14,7 +14,7 @@ class PigLatinizer
       puts moldable
       first_to_last = word.split("").push(first_letter)
       first_to_last.shift
-      puts "#{first_to_last} - "
+      puts "#{first_to_last.join("")}ay"
     }
     latinized.join("")
     #binding.pry
