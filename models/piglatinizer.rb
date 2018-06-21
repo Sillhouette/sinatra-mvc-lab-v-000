@@ -15,6 +15,7 @@ class PigLatinizer
       first_to_last.shift
       "#{first_to_last.join("")}ay"
     }
+    puts latinized
     latinized.join(" ")
     puts latinized
     #binding.pry
