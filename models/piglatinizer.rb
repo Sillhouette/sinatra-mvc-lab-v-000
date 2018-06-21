@@ -11,5 +11,3 @@ class PigLatinizer
     binding.pry
     "#{last_to_first}ay"
   end
-
-end
