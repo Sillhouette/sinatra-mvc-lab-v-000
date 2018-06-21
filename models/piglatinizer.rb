@@ -8,6 +8,7 @@ class PigLatinizer
 
   def pig_latinize
     array = @text.split(" ")
+    puts array
     latinized = array.map { |word|
       "#{word.split("").unshift(array.pop).join("")}ay"
     }
