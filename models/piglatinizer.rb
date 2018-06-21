@@ -16,7 +16,7 @@ class PigLatinizer
       "#{first_to_last.join("")}ay"
     }
     changed_array = latinized.to_s
-    puts changed_array[0]
+    puts changed_array[1]
 
     #binding.pry
     #{}"#{last_to_first}ay"
