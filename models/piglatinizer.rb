@@ -1,9 +1,7 @@
 class PigLatinizer
-  attr_reader :text
 
   def initiate(input)
     input.split(" ").length == 1 ? pig_latinize_word(input) : pig_latinize_sentence(input)
-    input
   end
 
   def consonant?(char)
