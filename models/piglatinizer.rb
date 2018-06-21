@@ -1,21 +1,30 @@
 class PigLatinizer
   attr_reader :text
 
-  def initialize(text)
-    @text = text
+  def initialize(input)
+    input.split(" ").length == 1 ? pig_latinize_word(input) : pig_latinize_sentence(input)
+    input
   end
 
-  def pig_latinize
-    array = @text.split(" ")
-    latinized_array = array.map { |word|
-      moldable = word
-      first_letter = moldable.split("").shift
-      first_to_last = word.split("").push(first_letter)
-      first_to_last.shift
-      "#{first_to_last.join("")}ay"
-    }
-    latinized_string = latinized_array.join(" ")
-    latinized_string
+  def consonant?(char)
+    !char.downcase.match(/[aeiou]/)
+  end
+
+  def pig_latinize_word(word)
+    if !consonant(word[0])
+      word = word + "w"
+    elsif consonant?(word[0]) && consonant?(word[1]) && consonant?(word[2])
+      word = word.slice(3..-1) + word.slice(0,3)
+    elsif consonant?(word[0]) && consonant?(word[1])
+      word = word.slice(2..-1) + word.slice(0,2)
+    else
+      word = word.slice(1..-1) + word.slice(0)
+    end
+    word = word + "ay"
+  end
+
+  def pig_latinize_sentence
+    sentence.split.map { |word| pig_latinize_word(word)}.join(" ")
   end
 
 end
