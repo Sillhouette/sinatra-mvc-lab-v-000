@@ -1,7 +1,7 @@
 class PigLatinizer
   attr_reader :text
 
-  initialize(text)
+  def initialize(text)
     @text = text
   end
 
@@ -11,3 +11,5 @@ class PigLatinizer
     binding.pry
     "#{last_to_first}ay"
   end
+
+end
