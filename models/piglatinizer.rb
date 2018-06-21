@@ -7,8 +7,9 @@ class PigLatinizer
 
   def pig_latinize
     array = @text.to_a
-    last_to_first = array.unshift(array.pop)
+    last_to_first = array.unshift(array.pop).join("")
     binding.pry
     "#{last_to_first}ay"
   end
+
 end
