@@ -7,8 +7,11 @@ class PigLatinizer
   end
 
   def pig_latinize
-    array = @text.to_a
-    last_to_first = array.unshift(array.pop).join("")
+    array = @text.split(" ")
+    latinized = array.map { |word|
+      "#{word.split("").unshift(array.pop).join("")}ay"
+    }
+    latinized.join("")
     binding.pry
     "#{last_to_first}ay"
   end
