@@ -2,7 +2,7 @@ class PigLatinizer
   attr_reader :text
 
   def initialize(text)
-    binding.pry
+    #binding.pry
     @text = text
   end
 
@@ -12,8 +12,8 @@ class PigLatinizer
       "#{word.split("").unshift(array.pop).join("")}ay"
     }
     latinized.join("")
-    binding.pry
-    "#{last_to_first}ay"
+    #binding.pry
+    #{}"#{last_to_first}ay"
   end
 
 end
